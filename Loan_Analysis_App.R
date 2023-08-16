@@ -45,7 +45,7 @@ selector <- function(inputId,label,col){
 
 
 #function to create Sideways Bar charts
-create_sidways_bar <- function(data, title, xlabel, x, fill){
+create_bar <- function(data, title, xlabel, x, fill){
   
   data %>% 
     rename("fill" = fill) %>%
@@ -292,7 +292,7 @@ server <- function(input, output){
   output$dti_loan_amount_bar <-renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Debt to Income Ratio", xlabel = "Origination Dollars",
+      create_bar(title = "Debt to Income Ratio", xlabel = "Origination Dollars",
                          x = "tot_loan_amount", fill = "dti_group")
     
   })
@@ -300,7 +300,7 @@ server <- function(input, output){
   
   output$income_loan_amount_bar <-renderPlot({
     agg_data_filt() %>%
-      create_sidways_bar(title = "Income", xlabel = "Origination Dollars",
+      create_bar(title = "Income", xlabel = "Origination Dollars",
                          x = "tot_loan_amount", fill = "income_group")
     
   })
@@ -309,7 +309,7 @@ server <- function(input, output){
   output$home_own_loan_amount_bar <-renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Home Ownership", xlabel = "Origination Dollars",
+      create_bar(title = "Home Ownership", xlabel = "Origination Dollars",
                          x = "tot_loan_amount", fill = "home_ownership")
   })
   
@@ -317,7 +317,7 @@ server <- function(input, output){
   output$purpose_loan_amount_bar <- renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Loan Purpose", xlabel = "Origination Dollars",
+      create_bar(title = "Loan Purpose", xlabel = "Origination Dollars",
                          x = "tot_loan_amount", fill = "purpose")
     
     
@@ -327,7 +327,7 @@ server <- function(input, output){
   output$loan_term_loan_amount_bar <-renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Loan Term", xlabel = "Origination Dollars",
+      create_bar(title = "Loan Term", xlabel = "Origination Dollars",
                          x = "tot_loan_amount", fill = "term")
     
     
@@ -337,7 +337,7 @@ server <- function(input, output){
   output$interest_loan_amount_bar <- renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Interest Payment Group", xlabel = "Origination Dollars",
+      create_bar(title = "Interest Payment Group", xlabel = "Origination Dollars",
                          x = "tot_loan_amount", fill = "interest_payments")
     
     
@@ -349,7 +349,7 @@ server <- function(input, output){
   output$dti_units_bar <-renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Debt to Income Ratio", xlabel = "Origination Units",
+      create_bar(title = "Debt to Income Ratio", xlabel = "Origination Units",
                          x = "tot_units", fill = "dti_group")
     
   })
@@ -357,7 +357,7 @@ server <- function(input, output){
   
   output$income_units_bar <-renderPlot({
     agg_data_filt() %>%
-      create_sidways_bar(title = "Income", xlabel = "Origination Units",
+      create_bar(title = "Income", xlabel = "Origination Units",
                          x = "tot_units", fill = "income_group")
     
   })
@@ -366,7 +366,7 @@ server <- function(input, output){
   output$home_own_units_bar <-renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Home Ownership", xlabel = "Origination Units",
+      create_bar(title = "Home Ownership", xlabel = "Origination Units",
                          x = "tot_units", fill = "home_ownership")
   })
   
@@ -374,7 +374,7 @@ server <- function(input, output){
   output$purpose_units_bar <- renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Loan Purpose", xlabel = "Origination Units",
+      create_bar(title = "Loan Purpose", xlabel = "Origination Units",
                          x = "tot_units", fill = "purpose")
     
     
@@ -384,7 +384,7 @@ server <- function(input, output){
   output$loan_term_units_bar <-renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Loan Term", xlabel = "Origination Units",
+      create_bar(title = "Loan Term", xlabel = "Origination Units",
                          x = "tot_units", fill = "term")
     
     
@@ -394,7 +394,7 @@ server <- function(input, output){
   output$interest_units_bar <- renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Interest Payment Group", xlabel = "Origination Units",
+      create_bar(title = "Interest Payment Group", xlabel = "Origination Units",
                          x = "tot_units", fill = "interest_payments")
     
     
@@ -406,7 +406,7 @@ server <- function(input, output){
   output$dti_upb_bar <-renderPlot({
   
     agg_data_filt() %>%
-      create_sidways_bar(title = "Debt to Income Ratio", xlabel = "% of Unpaid Principal Balance",
+      create_bar(title = "Debt to Income Ratio", xlabel = "% of Unpaid Principal Balance",
                        x = "tot_upb", fill = "dti_group")
   
   })
@@ -414,7 +414,7 @@ server <- function(input, output){
   
   output$income_upb_bar <-renderPlot({
     agg_data_filt() %>%
-      create_sidways_bar(title = "Income", xlabel = "% of Unpaid Principal Balance",
+      create_bar(title = "Income", xlabel = "% of Unpaid Principal Balance",
                        x = "tot_upb", fill = "income_group")
 
   })
@@ -423,7 +423,7 @@ server <- function(input, output){
   output$home_own_upb_bar <-renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Home Ownership", xlabel = "% of Unpaid Principal Balance",
+      create_bar(title = "Home Ownership", xlabel = "% of Unpaid Principal Balance",
                          x = "tot_upb", fill = "home_ownership")
   })
   
@@ -431,7 +431,7 @@ server <- function(input, output){
   output$purpose_upb_bar <- renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Loan Purpose", xlabel = "% of Unpaid Principal Balance",
+      create_bar(title = "Loan Purpose", xlabel = "% of Unpaid Principal Balance",
                          x = "tot_upb", fill = "purpose")
     
    
@@ -441,7 +441,7 @@ server <- function(input, output){
   output$loan_term_upb_bar <-renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Loan Term", xlabel = "% of Unpaid Principal Balance",
+      create_bar(title = "Loan Term", xlabel = "% of Unpaid Principal Balance",
                          x = "tot_upb", fill = "term")
     
     
@@ -451,7 +451,7 @@ server <- function(input, output){
   output$interest_upb_bar <- renderPlot({
     
     agg_data_filt() %>%
-      create_sidways_bar(title = "Interest Payment Group", xlabel = "% of Unpaid Principal Balance",
+      create_bar(title = "Interest Payment Group", xlabel = "% of Unpaid Principal Balance",
                          x = "tot_upb", fill = "interest_payments")
     
     
