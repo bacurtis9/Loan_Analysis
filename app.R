@@ -4,6 +4,9 @@ library(tidyverse)
 library(shinyWidgets)
 library(scales)
 
+# Link to web app
+# https://ben-curtis.shinyapps.io/Loan_Analysis/
+
 
 # Helper Function to reorder columns to so the stacked bar and legend make sense
 reorder_levels <- function(col){
